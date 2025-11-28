@@ -2,7 +2,6 @@
 
 ![](https://img.shields.io/badge/NoSQL-Database%20Manager-89b4fa?style=for-the-badge&labelColor=1e1e2e)
 
-<br/><br/>
 
 <h1>Gestor de Bases de Datos No Relacional</h1>
 
