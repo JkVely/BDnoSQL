@@ -15,26 +15,6 @@
 <a href="https://openjfx.io/"><img src="https://img.shields.io/badge/JavaFX-21-3a75b0?style=for-the-badge&logo=java&logoColor=white" alt="JavaFX 21"/></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-a6e3a1?style=for-the-badge" alt="License"></a>
 
-<br/><br/>
-
-<img src="https://img.shields.io/badge/Universidad%20Nacional%20de%20Colombia-Ciencias%20de%20la%20Computacion-f9e2af?style=flat-square&labelColor=1e1e2e" alt="UNAL"/>
-
-<br/><br/>
-
-<a href="#acerca-del-proyecto">Acerca</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#caracteristicas">Caracteristicas</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#arquitectura">Arquitectura</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#instalacion">Instalacion</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#uso">Uso</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#api-del-arbol-avl">API</a>
-<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-<a href="#autores">Autores</a>
-
 </div>
 
 ## Acerca del Proyecto
