@@ -37,93 +37,13 @@
 
 </div>
 
-<br/>
-
-<div align="center">
-<pre>
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│     ██████╗ ██████╗ ███╗   ██╗ ██████╗ ███████╗ ██████╗ ██╗     │
-│     ██╔══██╗██╔══██╗████╗  ██║██╔═══██╗██╔════╝██╔═══██╗██║     │
-│     ██████╔╝██║  ██║██╔██╗ ██║██║   ██║███████╗██║   ██║██║     │
-│     ██╔══██╗██║  ██║██║╚██╗██║██║   ██║╚════██║██║▄▄ ██║██║     │
-│     ██████╔╝██████╔╝██║ ╚████║╚██████╔╝███████║╚██████╔╝███████╗│
-│     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚══▀▀═╝ ╚══════╝│
-│                                                                 │
-│              AVL Tree Indexed Document Storage                  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-</pre>
-</div>
-
----
-
 ## Acerca del Proyecto
 
 > **NoSQL Database Manager** es un gestor de bases de datos no relacional desarrollado en Java, que utiliza **arboles AVL autobalanceados** como estructura de indexacion primaria.
 
-El sistema almacena documentos en formato JSON y proporciona una interfaz grafica moderna construida con JavaFX. Fue desarrollado como parte del curso de **Ciencias de la Computacion** de la Universidad Nacional de Colombia.
+El sistema almacena documentos en formato JSON y proporciona una interfaz grafica moderna construida con JavaFX.
 
-<br/>
-
-<div align="center">
-<table>
-<tr>
-<td align="center"><strong>Complejidad O(log n)</strong></td>
-<td align="center"><strong>Persistencia JSON</strong></td>
-<td align="center"><strong>Interfaz Moderna</strong></td>
-<td align="center"><strong>100% Java</strong></td>
-</tr>
-<tr>
-<td align="center">Operaciones CRUD eficientes<br/>con arbol autobalanceado</td>
-<td align="center">Almacenamiento en archivos<br/>de texto plano</td>
-<td align="center">Visualizacion interactiva<br/>del arbol AVL</td>
-<td align="center">Sin dependencias<br/>externas de BD</td>
-</tr>
-</table>
-</div>
-
----
-
-## Caracteristicas
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### Motor de Base de Datos
-
-| Caracteristica | Descripcion |
-|:--------------|:------------|
-| **Documentos JSON** | Almacenamiento flexible de datos |
-| **Arbol AVL** | Indexacion O(log n) garantizada |
-| **Persistencia** | Guardado automatico en .json |
-| **CRUD Completo** | Create, Read, Update, Delete |
-| **Busqueda Avanzada** | Por campo o predicado |
-
-</td>
-<td width="50%" valign="top">
-
-### Interfaz Grafica
-
-| Caracteristica | Descripcion |
-|:--------------|:------------|
-| **Visualizacion** | Arbol AVL interactivo |
-| **Zoom/Pan** | Navegacion fluida |
-| **Animaciones** | Feedback visual de operaciones |
-| **Detalles** | Panel informativo del nodo |
-| **Validacion** | Sintaxis JSON en tiempo real |
-
-</td>
-</tr>
-</table>
-
----
-
-## Arquitectura
-
-<details>
-<summary><strong>Ver estructura del proyecto</strong></summary>
+## Estructura del Proyecto
 
 <br/>
 
@@ -152,31 +72,6 @@ src/main/java/com/nosqlmanager/
     ├── MainView.java           # Vista principal
     └── TreeVisualizer.java     # Visualizador
 ```
-
-</details>
-
-<br/>
-
-<div align="center">
-
-```
-┌──────────────────┐         ┌──────────────────┐         ┌──────────────────┐
-│                  │         │                  │         │                  │
-│     MainView     │────────▶│ DatabaseManager  │────────▶│     AVLTree      │
-│    (JavaFX)      │         │    (CRUD)        │         │   (Indexacion)   │
-│                  │         │                  │         │                  │
-└──────────────────┘         └────────┬─────────┘         └──────────────────┘
-                                      │
-                                      ▼
-                             ┌──────────────────┐
-                             │                  │
-                             │ JsonFileStorage  │
-                             │  (Persistencia)  │
-                             │                  │
-                             └──────────────────┘
-```
-
-</div>
 
 ---
 
