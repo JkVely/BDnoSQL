@@ -30,7 +30,7 @@ Este proyecto es un gestor de bases de datos NoSQL en Java, que almacena objetos
 
 1. Clona el repositorio:
 	```sh
-	git clone <url-del-repositorio>
+	git clone [https://github.com/JkVely/BDnoSQL](https://github.com/JkVely/BDnoSQL)
 	```
 2. Accede a la carpeta del proyecto:
 	```sh
@@ -38,19 +38,8 @@ Este proyecto es un gestor de bases de datos NoSQL en Java, que almacena objetos
 	```
 3. Compila y ejecuta las pruebas:
 	```sh
-	mvn clean install
+	mvn exec:java
 	```
-
-## Flujo de trabajo y buenas prácticas
-
-- Cada nueva funcionalidad se implementa en una rama y se integra mediante un commit separado.
-- Consulta `TODO.md` para ver el progreso y las siguientes etapas.
-- Sigue las convenciones de nombres y mantén el código documentado.
-- Realiza pruebas unitarias para cada módulo implementado.
-
-## Dockerización
-
-Al finalizar el desarrollo, el proyecto será dockerizado para facilitar su despliegue y pruebas en cualquier entorno.
 
 ---
 
