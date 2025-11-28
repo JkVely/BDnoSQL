@@ -1,0 +1,28 @@
+# Compiled files
+/target/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.iml
+.idea/
+*.classpath
+*.project
+*.settings/
+
+# Maven
+.mvn/
+
+# Java
+*.class
+
+# VSCode
+.vscode/
+
+# No subir el archivo de tareas
+TODO.md
