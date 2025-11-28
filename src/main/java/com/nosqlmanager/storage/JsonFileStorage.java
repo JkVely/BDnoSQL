@@ -74,7 +74,7 @@ public class JsonFileStorage implements JsonRepository {
     }
 
     @Override
-    public Optional<JsonDocument> findById(String id) {
+    public Optional<JsonDocument> findById(Integer id) {
         return documents.stream()
                 .filter(doc -> doc.getId().equals(id))
                 .findFirst();
@@ -108,7 +108,7 @@ public class JsonFileStorage implements JsonRepository {
     }
 
     @Override
-    public boolean deleteById(String id) {
+    public boolean deleteById(Integer id) {
         Optional<JsonDocument> existing = findById(id);
         if (existing.isPresent()) {
             documents.remove(existing.get());
@@ -119,7 +119,7 @@ public class JsonFileStorage implements JsonRepository {
     }
 
     @Override
-    public boolean existsById(String id) {
+    public boolean existsById(Integer id) {
         return documents.stream().anyMatch(doc -> doc.getId().equals(id));
     }
 

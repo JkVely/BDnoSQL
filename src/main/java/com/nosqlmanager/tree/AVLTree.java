@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Implementación de un árbol AVL autobalanceado.
- * Permite operaciones eficientes de inserción, búsqueda, actualización y eliminación
- * con complejidad O(log n).
+ * Permite operaciones eficientes de inserción, búsqueda, actualización y eliminación.
  *
  * @param <K> Tipo de la clave (debe ser comparable)
  * @param <V> Tipo del valor asociado a la clave

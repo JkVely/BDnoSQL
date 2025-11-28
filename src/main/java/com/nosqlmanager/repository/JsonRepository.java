@@ -22,7 +22,7 @@ public interface JsonRepository {
      * @param id Clave principal del documento.
      * @return Optional con el documento si existe, vacío si no.
      */
-    Optional<JsonDocument> findById(String id);
+    Optional<JsonDocument> findById(Integer id);
 
     /**
      * Obtiene todos los documentos almacenados.
@@ -51,14 +51,14 @@ public interface JsonRepository {
      * @param id Clave principal del documento a eliminar.
      * @return true si se eliminó, false si no existía.
      */
-    boolean deleteById(String id);
+    boolean deleteById(Integer id);
 
     /**
      * Verifica si existe un documento con la clave dada.
      * @param id Clave principal.
      * @return true si existe, false si no.
      */
-    boolean existsById(String id);
+    boolean existsById(Integer id);
 
     /**
      * Actualiza un documento existente.

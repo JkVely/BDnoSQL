@@ -23,7 +23,7 @@ public class DatabaseManager {
 
     private final File file;
     private final ObjectMapper objectMapper;
-    private final AVLTree<String, JsonDocument> index;
+    private final AVLTree<Integer, JsonDocument> index;
 
     /**
      * Crea el gestor y carga los datos desde el archivo JSON (si existe).
@@ -90,7 +90,7 @@ public class DatabaseManager {
      * @param id La clave principal del documento.
      * @return El documento si existe, o vacío si no.
      */
-    public Optional<JsonDocument> findById(String id) {
+    public Optional<JsonDocument> findById(Integer id) {
         return index.search(id);
     }
 
@@ -173,7 +173,7 @@ public class DatabaseManager {
      * @param id El id del documento a eliminar.
      * @return true si se eliminó, false si no existía.
      */
-    public boolean deleteById(String id) {
+    public boolean deleteById(Integer id) {
         if (!index.delete(id)) {
             return false;
         }
@@ -187,7 +187,7 @@ public class DatabaseManager {
      * @param id El id a buscar.
      * @return true si existe, false si no.
      */
-    public boolean existsById(String id) {
+    public boolean existsById(Integer id) {
         return index.contains(id);
     }
 
@@ -198,7 +198,7 @@ public class DatabaseManager {
      */
     public List<JsonDocument> getAllDocuments() {
         List<JsonDocument> documents = new ArrayList<>();
-        for (String key : index.getAllKeys()) {
+        for (Integer key : index.getAllKeys()) {
             index.search(key).ifPresent(documents::add);
         }
         return documents;
@@ -242,7 +242,17 @@ public class DatabaseManager {
      *
      * @return Lista de ids ordenados.
      */
-    public List<String> getAllKeys() {
+    public List<Integer> getAllKeys() {
         return index.getAllKeys();
+    }
+
+    /**
+     * Devuelve el árbol AVL interno para visualización.
+     * Útil para la GUI que dibuja el árbol.
+     *
+     * @return El árbol AVL con los documentos indexados.
+     */
+    public AVLTree<Integer, JsonDocument> getIndex() {
+        return index;
     }
 }

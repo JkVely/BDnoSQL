@@ -1,0 +1,37 @@
+[ {
+  "id" : 2,
+  "data" : {
+    "nombre" : "gio",
+    "codigo" : 180
+  }
+}, {
+  "id" : 11,
+  "data" : {
+    "nombre" : "diego",
+    "codigo" : 87
+  }
+}, {
+  "id" : 12,
+  "data" : {
+    "nombre" : "andres",
+    "codigo" : 329
+  }
+}, {
+  "id" : 13,
+  "data" : {
+    "nombre" : "lucia",
+    "codigo" : 221
+  }
+}, {
+  "id" : 14,
+  "data" : {
+    "nombre" : "pablo",
+    "codigo" : 144
+  }
+}, {
+  "id" : 15,
+  "data" : {
+    "nombre" : "marta",
+    "codigo" : 66
+  }
+} ]
