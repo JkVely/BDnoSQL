@@ -21,12 +21,9 @@ Este proyecto es un gestor de bases de datos NoSQL en Java, que almacena objetos
 
 <!--TODO: Diagrama-->
 
-> [!NOTE]
-> Mantén la estructura y los nombres de carpetas para facilitar la navegación y el mantenimiento del proyecto.
-
 ## Requisitos
 
-- Java 17 o superior
+- Java 21 (Ultimo LTS) o superior
 - Maven 3.8 o superior
 
 ## Instrucciones de uso
@@ -43,10 +40,6 @@ Este proyecto es un gestor de bases de datos NoSQL en Java, que almacena objetos
 	```sh
 	mvn clean install
 	```
-4. Ejecuta la aplicación principal (por definir en etapas posteriores).
-
-> [!WARNING]
-> Asegúrate de tener Java 17+ y Maven instalados antes de compilar el proyecto.
 
 ## Flujo de trabajo y buenas prácticas
 
