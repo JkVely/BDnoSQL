@@ -27,8 +27,8 @@ import javafx.util.Duration;
 public class TreeVisualizer extends Pane {
 
     private static final double NODE_RADIUS = 25;
-    private static final double VERTICAL_SPACING = 80;
-    private static final double INITIAL_HORIZONTAL_SPACING = 200;
+    private static final double VERTICAL_SPACING = 85;
+    private static final double INITIAL_HORIZONTAL_SPACING = 500;
     private static final Duration ANIMATION_DURATION = Duration.millis(500);
 
     private AVLTree<Integer, JsonDocument> tree;
@@ -102,8 +102,9 @@ public class TreeVisualizer extends Pane {
 
         nodePositions.put(node.getKey(), new Point2D(x, y));
 
-        double nextHSpacing = hSpacing * 0.6;
-        if (nextHSpacing < 40) nextHSpacing = 40;
+        // Reduccion mas gradual del espaciado, con minimo mas alto
+        double nextHSpacing = hSpacing * 0.52;
+        if (nextHSpacing < 70) nextHSpacing = 70;
 
         if (node.getLeft() != null) {
             calculatePositions(node.getLeft(), x - hSpacing, y + VERTICAL_SPACING, nextHSpacing);
