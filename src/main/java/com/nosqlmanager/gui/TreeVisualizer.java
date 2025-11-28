@@ -62,7 +62,7 @@ public class TreeVisualizer extends Pane {
     }
 
     /**
-     * Dibuja el árbol completo con animación opcional
+     * Dibuja el árbol completo con animación
      */
     public void drawTree(boolean animate) {
         this.getChildren().clear();
@@ -73,15 +73,12 @@ public class TreeVisualizer extends Pane {
             return;
         }
 
-        // Calcular posiciones de todos los nodos
         double centerX = this.getWidth() / 2;
         if (centerX < 400) centerX = 400;
         calculatePositions(tree.getRoot(), centerX, 50, INITIAL_HORIZONTAL_SPACING);
 
-        // Dibujar líneas primero (para que queden detrás de los nodos)
         drawLines(tree.getRoot(), animate);
 
-        // Dibujar nodos
         drawNodes(tree.getRoot(), animate);
     }
 
@@ -102,7 +99,6 @@ public class TreeVisualizer extends Pane {
 
         nodePositions.put(node.getKey(), new Point2D(x, y));
 
-        // Reduccion mas gradual del espaciado, con minimo mas alto
         double nextHSpacing = hSpacing * 0.52;
         if (nextHSpacing < 70) nextHSpacing = 70;
 
@@ -252,7 +248,6 @@ public class TreeVisualizer extends Pane {
         highlightedKey = key;
         drawTree(true);
 
-        // Quitar highlight después de un tiempo
         javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(Duration.seconds(2));
         pause.setOnFinished(e -> {
             highlightedKey = null;
@@ -265,11 +260,9 @@ public class TreeVisualizer extends Pane {
      * Anima la eliminación de un nodo
      */
     public void animateDelete(Integer key) {
-        // Primero resaltar el nodo a eliminar
         highlightedKey = key;
-        drawTree(false);
+        drawTree(true);
 
-        // Luego redibujar sin el nodo
         javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(Duration.millis(300));
         pause.setOnFinished(e -> {
             highlightedKey = null;

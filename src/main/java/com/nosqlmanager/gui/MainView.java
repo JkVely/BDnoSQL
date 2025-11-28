@@ -62,14 +62,12 @@ public class MainView extends Application {
     private VBox logPanel;
     private boolean logVisible = true;
     
-    // Node details labels
     private Label idValueLabel;
     private VBox dataContentBox;
     private Label heightValueLabel;
     private Label balanceValueLabel;
     private Label stateValueLabel;
     
-    // Zoom and pan state
     private double scale = 1.0;
     private double translateX = 0;
     private double translateY = 0;
@@ -81,7 +79,6 @@ public class MainView extends Application {
     private static final double MIN_SCALE = 0.3;
     private static final double MAX_SCALE = 3.0;
     
-    // Current selected operation
     private String currentOperation = null;
 
     /**
@@ -184,7 +181,6 @@ public class MainView extends Application {
         title.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         title.setStyle("-fx-text-fill: #cdd6f4;");
 
-        // Selector de operación horizontal tipo tabs
         HBox operationSelector = createOperationSelector();
 
         dynamicFormPanel = new VBox(15);
@@ -282,7 +278,6 @@ public class MainView extends Application {
     private void selectOperation(String operation, Button selectedBtn, HBox container) {
         currentOperation = operation;
         
-        // Reset all buttons
         for (javafx.scene.Node node : container.getChildren()) {
             if (node instanceof Button) {
                 Button btn = (Button) node;
@@ -298,7 +293,6 @@ public class MainView extends Application {
             }
         }
         
-        // Highlight selected
         selectedBtn.setStyle(
             "-fx-background-color: #89b4fa; " +
             "-fx-text-fill: #1e1e2e; " +
@@ -565,7 +559,6 @@ public class MainView extends Application {
         scrollPane.setHvalue(0.5);
         scrollPane.setVvalue(0.1);
 
-        // Zoom with Ctrl + Scroll
         scrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             if (event.isControlDown()) {
                 event.consume();
@@ -581,7 +574,6 @@ public class MainView extends Application {
             }
         });
 
-        // Pan with right/middle click
         wrapper.setOnMousePressed(event -> {
             if (event.getButton() == MouseButton.SECONDARY || event.getButton() == MouseButton.MIDDLE) {
                 isPanning = true;
@@ -940,8 +932,6 @@ public class MainView extends Application {
             logVisible = true;
         }
     }
-
-    // Handler methods
     
     private void handleNewDatabase() {
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
@@ -1202,10 +1192,8 @@ public class MainView extends Application {
         try {
             AVLNode<Integer, JsonDocument> node = findNode(dbManager.getIndex().getRoot(), id);
             
-            // Update ID
             idValueLabel.setText(String.valueOf(id));
             
-            // Update Data content
             dataContentBox.getChildren().clear();
             try {
                 JsonNode data = doc.getData();
@@ -1230,21 +1218,17 @@ public class MainView extends Application {
             }
             
             if (node != null) {
-                // Update Height
                 heightValueLabel.setText(String.valueOf(node.getHeight()));
                 
-                // Update Balance Factor
                 int balanceFactor = getBalanceFactor(node);
                 balanceValueLabel.setText(String.valueOf(balanceFactor));
                 
-                // Color code balance factor
                 if (balanceFactor >= -1 && balanceFactor <= 1) {
                     balanceValueLabel.setStyle("-fx-text-fill: #a6e3a1; -fx-font-size: 20; -fx-font-weight: bold;");
                 } else {
                     balanceValueLabel.setStyle("-fx-text-fill: #f38ba8; -fx-font-size: 20; -fx-font-weight: bold;");
                 }
                 
-                // Update State with color coding
                 String state = getNodeState(balanceFactor);
                 stateValueLabel.setText(state);
                 
@@ -1270,7 +1254,6 @@ public class MainView extends Application {
                 stateValueLabel.setText("-");
             }
             
-            // Show JSON content
             String jsonStr = objectMapper.writerWithDefaultPrettyPrinter()
                     .writeValueAsString(doc.getData());
             jsonViewer.setText(jsonStr);
