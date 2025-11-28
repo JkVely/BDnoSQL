@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/NoSQL-Database%20Manager-89b4fa?style=for-the-badge&labelColor=1e1e2e" alt="NoSQL Database Manager"/>
+![](https://img.shields.io/badge/NoSQL-Database%20Manager-89b4fa?style=for-the-badge&labelColor=1e1e2e)
 
 <br/><br/>
 
@@ -10,10 +10,9 @@
 
 <br/>
 
-<a href="https://maven.apache.org/"><img src="https://img.shields.io/badge/Build-Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven"></a>
-<a href="https://www.oracle.com/java/technologies/downloads/"><img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
-<a href="https://openjfx.io/"><img src="https://img.shields.io/badge/JavaFX-21-3a75b0?style=for-the-badge&logo=java&logoColor=white" alt="JavaFX 21"/></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-a6e3a1?style=for-the-badge" alt="License"></a>
+![](https://img.shields.io/badge/Build-Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
+![](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![](https://img.shields.io/badge/JavaFX-21-3a75b0?style=for-the-badge&logo=java&logoColor=white)
 
 </div>
 
