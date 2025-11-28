@@ -1,6 +1,7 @@
 package com.nosqlmanager.storage;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.nosqlmanager.model.JsonDocument;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 /**
  * Implementación de JsonRepository que persiste los documentos en un archivo JSON.
@@ -84,6 +86,28 @@ public class JsonFileStorage implements JsonRepository {
     }
 
     @Override
+    public List<JsonDocument> findByPredicate(Predicate<JsonDocument> predicate) {
+        List<JsonDocument> results = new ArrayList<>();
+        for (JsonDocument doc : documents) {
+            if (predicate.test(doc)) {
+                results.add(doc);
+            }
+        }
+        return results;
+    }
+
+    @Override
+    public List<JsonDocument> findByField(String fieldName, String value) {
+        return findByPredicate(doc -> {
+            JsonNode data = doc.getData();
+            if (data == null) return false;
+            JsonNode field = data.get(fieldName);
+            if (field == null) return false;
+            return field.asText().contains(value);
+        });
+    }
+
+    @Override
     public boolean deleteById(String id) {
         Optional<JsonDocument> existing = findById(id);
         if (existing.isPresent()) {
@@ -97,5 +121,17 @@ public class JsonFileStorage implements JsonRepository {
     @Override
     public boolean existsById(String id) {
         return documents.stream().anyMatch(doc -> doc.getId().equals(id));
+    }
+
+    @Override
+    public boolean update(JsonDocument document) {
+        Optional<JsonDocument> existing = findById(document.getId());
+        if (existing.isPresent()) {
+            int index = documents.indexOf(existing.get());
+            documents.set(index, document);
+            saveToFile();
+            return true;
+        }
+        return false;
     }
 }
